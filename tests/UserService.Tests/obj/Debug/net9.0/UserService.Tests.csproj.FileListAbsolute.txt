@@ -1,0 +1,5 @@
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\tests\UserService.Tests\obj\Debug\net9.0\UserService.Tests.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\tests\UserService.Tests\obj\Debug\net9.0\UserService.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\tests\UserService.Tests\obj\Debug\net9.0\UserService.Tests.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\tests\UserService.Tests\obj\Debug\net9.0\UserService.Tests.AssemblyInfo.cs
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\tests\UserService.Tests\obj\Debug\net9.0\UserService.Tests.csproj.CoreCompileInputs.cache
