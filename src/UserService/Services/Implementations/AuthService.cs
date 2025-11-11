@@ -6,6 +6,7 @@ using System.Text;
 using UserService.Data;
 using UserService.Models;
 using UserService.Services.Interfaces;
+using Serilog;
 
 
 namespace UserService.Services.Implementations;
@@ -23,6 +24,7 @@ public class AuthService : IAuthService
 
     public async Task<AuthResult> RegisterAsync(RegisterRequest request)
     {
+        Log.Information("Register attempt for email: {Email}", request.Email);
         // Проверяем существует ли пользователь
         var existingUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == request.Email);
         if (existingUser != null)

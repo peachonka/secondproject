@@ -49,3 +49,4 @@ C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\src\Ap
 C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\src\ApiGateway\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\src\ApiGateway\bin\Debug\net9.0\System.IO.Hashing.dll
 C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\src\ApiGateway\bin\Debug\net9.0\Yarp.ReverseProxy.dll
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\src\ApiGateway\bin\Debug\net9.0\appsettings.Production.json

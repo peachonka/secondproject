@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using OrderService.Models;
 using Shared.Models;
+using System.Security.Claims;
 
 namespace OrderService.Controllers;
 
@@ -10,15 +11,39 @@ namespace OrderService.Controllers;
 [Route("api/v1/[controller]")]
 public class OrdersController : ControllerBase
 {
+    private readonly IEventBus _eventBus;
+
+    public OrdersController(IEventBus eventBus)
+    {
+        _eventBus = eventBus;
+    }
+
     [HttpPost]
     public async Task<IActionResult> CreateOrder([FromBody] CreateOrderRequest request)
     {
-        // TODO: Реализовать создание заказа
+        var orderId = Guid.NewGuid();
+        var userId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? Guid.Empty.ToString());
+
+        // Публикуем событие создания заказа
+        await _eventBus.PublishAsync(new OrderCreatedEvent
+        {
+            OrderId = orderId,
+            UserId = userId,
+            TotalAmount = request.Items.Sum(i => i.Quantity * i.Price),
+            Items = request.Items.Select(i => new OrderItemEvent 
+            { 
+                Product = i.Product, 
+                Quantity = i.Quantity, 
+                Price = i.Price 
+            }).ToList(),
+            EventType = "OrderCreated"
+        });
+
         var response = new ApiResponse<object>
         {
             Success = true,
             Data = new { 
-                Id = Guid.NewGuid(), 
+                Id = orderId, 
                 Status = "created",
                 TotalAmount = request.Items.Sum(i => i.Quantity * i.Price)
             }
@@ -29,7 +54,6 @@ public class OrdersController : ControllerBase
     [HttpGet("{id}")]
     public async Task<IActionResult> GetOrder(Guid id)
     {
-        // TODO: Реализовать получение заказа
         var response = new ApiResponse<object>
         {
             Success = true,
@@ -47,7 +71,6 @@ public class OrdersController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> GetUserOrders([FromQuery] int page = 1, [FromQuery] int limit = 10)
     {
-        // TODO: Реализовать список заказов
         var response = new ApiResponse<object>
         {
             Success = true,
@@ -64,7 +87,18 @@ public class OrdersController : ControllerBase
     [HttpPatch("{id}/status")]
     public async Task<IActionResult> UpdateOrderStatus(Guid id, [FromBody] UpdateOrderStatusRequest request)
     {
-        // TODO: Реализовать обновление статуса
+        var userId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? Guid.Empty.ToString());
+
+        // Публикуем событие обновления статуса
+        await _eventBus.PublishAsync(new OrderStatusUpdatedEvent
+        {
+            OrderId = id,
+            UserId = userId,
+            OldStatus = "created", // В реальности нужно получить текущий статус из БД
+            NewStatus = request.Status.ToString(),
+            EventType = "OrderStatusUpdated"
+        });
+
         var response = new ApiResponse<object>
         {
             Success = true,
@@ -79,7 +113,18 @@ public class OrdersController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> CancelOrder(Guid id)
     {
-        // TODO: Реализовать отмену заказа
+        var userId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? Guid.Empty.ToString());
+
+        // Публикуем событие отмены заказа
+        await _eventBus.PublishAsync(new OrderStatusUpdatedEvent
+        {
+            OrderId = id,
+            UserId = userId,
+            OldStatus = "created",
+            NewStatus = "cancelled",
+            EventType = "OrderStatusUpdated"
+        });
+
         var response = new ApiResponse<object>
         {
             Success = true,

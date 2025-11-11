@@ -1,50 +1,16 @@
-version: '3.8'
-
 services:
   api-gateway:
-    build:
-      context: .
-      dockerfile: src/ApiGateway/Dockerfile
-    ports:
-      - "5000:80"
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - Jwt__Secret=your-super-secret-key-here
-    depends_on:
-      - user-service
-      - order-service
-
+      - ASPNETCORE_ENVIRONMENT=Production
+      - JWT_SECRET=${JWT_SECRET}
+    
   user-service:
-    build:
-      context: .
-      dockerfile: src/UserService/Dockerfile
     environment:
-      - ConnectionStrings__DefaultConnection=Host=postgres;Database=users;Username=postgres;Password=password123
-      - Jwt__Secret=your-super-secret-key-here
-    depends_on:
-      - postgres
-
+      - ASPNETCORE_ENVIRONMENT=Production
+      - DB_CONNECTION_STRING=Host=postgres;Database=users;Username=postgres;Password=${DB_PASSWORD}
+      - JWT_SECRET=${JWT_SECRET}
+    
   order-service:
-    build:
-      context: .
-      dockerfile: src/OrderService/Dockerfile
     environment:
-      - ConnectionStrings__DefaultConnection=Host=postgres;Database=orders;Username=postgres;Password=password123
-      - Services__UserService=http://user-service:80
-    depends_on:
-      - postgres
-      - user-service
-
-  postgres:
-    image: postgres:15
-    environment:
-      - POSTGRES_DB=construction
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=password123
-    ports:
-      - "5432:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-
-volumes:
-  postgres_data:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - DB_CONNECTION_STRING=Host=postgres;Database=orders;Username=postgres;Password=${DB_PASSWORD}

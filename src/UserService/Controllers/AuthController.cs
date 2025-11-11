@@ -17,7 +17,11 @@ public class AuthController : ControllerBase
     {
         _authService = authService;
     }
-
+/// <summary>
+/// Регистрация нового пользователя
+/// </summary>
+/// <param name="request">Данные для регистрации</param>
+/// <returns>Результат регистрации с JWT токеном</returns>
    [HttpPost("register")]
 public async Task<IActionResult> Register([FromBody] RegisterRequest request)
 {
@@ -53,7 +57,7 @@ public async Task<IActionResult> Login([FromBody] LoginRequest request)
         Data = new AuthResponse { 
             UserId = result.UserId!.Value, 
             Token = result.Token!,
-            Email = request.Email
+            Email = request.Email,
         }
     };
     return Ok(response);
