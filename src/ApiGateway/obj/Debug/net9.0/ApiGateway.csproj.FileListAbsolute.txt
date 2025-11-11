@@ -36,3 +36,16 @@ C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\src\Ap
 C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\src\ApiGateway\obj\Debug\net9.0\ApiGateway.pdb
 C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\src\ApiGateway\obj\Debug\net9.0\ApiGateway.genruntimeconfig.cache
 C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\src\ApiGateway\obj\Debug\net9.0\ref\ApiGateway.dll
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\src\ApiGateway\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\src\ApiGateway\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\src\ApiGateway\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\src\ApiGateway\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\src\ApiGateway\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\src\ApiGateway\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\src\ApiGateway\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\src\ApiGateway\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\src\ApiGateway\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\src\ApiGateway\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\src\ApiGateway\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\src\ApiGateway\bin\Debug\net9.0\System.IO.Hashing.dll
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\src\ApiGateway\bin\Debug\net9.0\Yarp.ReverseProxy.dll
