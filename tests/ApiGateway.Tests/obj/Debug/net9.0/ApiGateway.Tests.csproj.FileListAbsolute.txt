@@ -1,0 +1,6 @@
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\tests\ApiGateway.Tests\obj\Debug\net9.0\ApiGateway.Tests.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\tests\ApiGateway.Tests\obj\Debug\net9.0\ApiGateway.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\tests\ApiGateway.Tests\obj\Debug\net9.0\ApiGateway.Tests.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\tests\ApiGateway.Tests\obj\Debug\net9.0\ApiGateway.Tests.AssemblyInfo.cs
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\tests\ApiGateway.Tests\obj\Debug\net9.0\ApiGateway.Tests.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\tests\ApiGateway.Tests\obj\Debug\net9.0\ApiGateway.Tests.sourcelink.json

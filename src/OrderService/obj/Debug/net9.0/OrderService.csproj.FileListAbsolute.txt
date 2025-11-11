@@ -1,0 +1,9 @@
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\src\OrderService\obj\Debug\net9.0\OrderService.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\src\OrderService\obj\Debug\net9.0\rpswa.dswa.cache.json
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\src\OrderService\obj\Debug\net9.0\OrderService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\src\OrderService\obj\Debug\net9.0\OrderService.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\src\OrderService\obj\Debug\net9.0\OrderService.AssemblyInfo.cs
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\src\OrderService\obj\Debug\net9.0\OrderService.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\src\OrderService\obj\Debug\net9.0\OrderService.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\src\OrderService\obj\Debug\net9.0\OrderService.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\src\OrderService\obj\Debug\net9.0\OrderService.sourcelink.json

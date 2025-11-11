@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using UserService.Models;
 using Shared.Models; 
+using UserService.Services.Interfaces;
+
 
 namespace UserService.Controllers;
 
@@ -9,27 +11,51 @@ namespace UserService.Controllers;
 [Route("api/v1/[controller]")]
 public class AuthController : ControllerBase
 {
-    [HttpPost("register")]
-    public async Task<IActionResult> Register([FromBody] RegisterRequest request)
+    private readonly IAuthService _authService;
+
+    public AuthController(IAuthService authService)
     {
-        // TODO: Реализация регистрации
-        var response = new ApiResponse<object>
-        {
-            Success = true,
-            Data = new { UserId = Guid.NewGuid(), Email = request.Email }
-        };
-        return Ok(response);
+        _authService = authService;
     }
 
-    [HttpPost("login")]
-    public async Task<IActionResult> Login([FromBody] LoginRequest request)
+   [HttpPost("register")]
+public async Task<IActionResult> Register([FromBody] RegisterRequest request)
+{
+    var result = await _authService.RegisterAsync(request);
+    
+    if (!result.Success)
+        return Conflict(ApiResponse<object>.ErrorResult("USER_EXISTS", result.Error!));
+
+    var response = new ApiResponse<AuthResponse>
     {
-        // TODO: Реализация входа
-        var response = new ApiResponse<object>
-        {
-            Success = true,
-            Data = new { Token = "jwt-token-here" }
-        };
-        return Ok(response);
-    }
+        Success = true,
+        Data = new AuthResponse { 
+            UserId = result.UserId!.Value, 
+            Token = result.Token!,
+            Email = request.Email,
+            Name = request.Name
+        }
+    };
+    return Ok(response);
+}
+
+[HttpPost("login")]
+public async Task<IActionResult> Login([FromBody] LoginRequest request)
+{
+    var result = await _authService.LoginAsync(request);
+    
+    if (!result.Success)
+        return Unauthorized(ApiResponse<object>.ErrorResult("INVALID_CREDENTIALS", result.Error!));
+
+    var response = new ApiResponse<AuthResponse>
+    {
+        Success = true,
+        Data = new AuthResponse { 
+            UserId = result.UserId!.Value, 
+            Token = result.Token!,
+            Email = request.Email
+        }
+    };
+    return Ok(response);
+}
 }

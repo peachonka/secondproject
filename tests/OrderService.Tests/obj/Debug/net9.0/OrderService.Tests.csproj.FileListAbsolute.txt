@@ -1,0 +1,6 @@
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\tests\OrderService.Tests\obj\Debug\net9.0\OrderService.Tests.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\tests\OrderService.Tests\obj\Debug\net9.0\OrderService.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\tests\OrderService.Tests\obj\Debug\net9.0\OrderService.Tests.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\tests\OrderService.Tests\obj\Debug\net9.0\OrderService.Tests.AssemblyInfo.cs
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\tests\OrderService.Tests\obj\Debug\net9.0\OrderService.Tests.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\5 семестр\Фреймворки\secondproject\tests\OrderService.Tests\obj\Debug\net9.0\OrderService.Tests.sourcelink.json
