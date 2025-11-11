@@ -54,10 +54,11 @@ public async Task<IActionResult> Login([FromBody] LoginRequest request)
     var response = new ApiResponse<AuthResponse>
     {
         Success = true,
-        Data = new AuthResponse { 
-            UserId = result.UserId!.Value, 
+        Data = new AuthResponse {
+            UserId = result.UserId!.Value,
             Token = result.Token!,
             Email = request.Email,
+            Name = result.Name!
         }
     };
     return Ok(response);

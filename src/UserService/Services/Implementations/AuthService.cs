@@ -46,7 +46,16 @@ public class AuthService : IAuthService
         await _context.SaveChangesAsync();
 
         var token = GenerateJwtToken(user);
-        return new AuthResult { Success = true, Token = token, UserId = user.Id };
+        
+        // ДОБАВЛЯЕМ возврат Email и Name (как в LoginAsync)
+        return new AuthResult 
+        { 
+            Success = true, 
+            Token = token, 
+            UserId = user.Id,
+            Email = user.Email,    // ← ДОБАВЬТЕ ЭТО
+            Name = user.Name       // ← ДОБАВЬТЕ ЭТО
+        };
     }
 
     public async Task<AuthResult> LoginAsync(LoginRequest request)
@@ -56,7 +65,14 @@ public class AuthService : IAuthService
             return new AuthResult { Success = false, Error = "Invalid credentials" };
 
         var token = GenerateJwtToken(user);
-        return new AuthResult { Success = true, Token = token, UserId = user.Id };
+        return new AuthResult
+        {
+            Success = true,
+            Token = token,
+            UserId = user.Id,
+            Email = user.Email,
+            Name = user.Name
+        };
     }
 
     private string GenerateJwtToken(User user)
